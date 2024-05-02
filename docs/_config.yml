@@ -22,7 +22,7 @@ title: PHD SRG
 email: sergiorgiraldo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   PHD journey for Sergio Giraldo.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/phd" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: sergiorgiraldo
 github_username:  serrgiorgiraldo
