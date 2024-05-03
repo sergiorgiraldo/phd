@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-PHD Journey, Sergio Giraldo
+https://giral.do/
