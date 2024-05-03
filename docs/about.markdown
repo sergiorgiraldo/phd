@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-https://giral.do/
+[Sergio Giraldo](https://giral.do/), PhD student.
