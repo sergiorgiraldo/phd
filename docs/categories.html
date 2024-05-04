@@ -10,9 +10,9 @@ title: Categories
     {% capture category_name %}{{ category | first }}{% endcapture %}
     
     <b class="category-head">{{ category_name }}</b>&nbsp;
-    <span id="hide{{ category_name }}" style="cursor: pointer;">+</span>&nbsp;
+    <span id="hide{{ category_name }}" style="cursor: pointer;" onclick="toggle('cat{{ category_name }}')">+</span>&nbsp;
     <span id="show{{ category_name }}" style="cursor: pointer;">-</span>  
-    <div class="archive-group" id="cat{{ category_name }}">
+    <div class="archive-group" id="cat{{ category_name }}" style="display: none">
         {% for post in site.categories[category_name] %}
             <article class="archive-item">
             <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
@@ -21,3 +21,9 @@ title: Categories
     </div>
 {% endfor %}
 </div>
+
+<script>
+    function toggle(id) {
+        document.getElementById(id).style.display = document.getElementById(id).style.display == 'none' ? 'block' : 'none';
+    }
+</script>
