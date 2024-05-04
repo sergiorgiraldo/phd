@@ -16,13 +16,14 @@ title: Dates
             {% endif %}
         {% endunless %}
 
+        {% capture dtid %}{{ post.date | date: '%B%Y' }}{% endcapture %}
         {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
         {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
         {% if month != nmonth %}
         {% if forloop.index != 1 %}</ul>{% endif %}
             <b>{{ post.date | date: '%B %Y' }}</b>&nbsp;
-            <span style="cursor: pointer;" onclick="toggle('dt{{ post.date | date: \'%B %Y\' }}')">▲▼</span>
-            <ul id="dt{{ post.date | date: '%B%Y' }}" style="display: none">
+            <span style="cursor: pointer;" onclick="toggle('dt{{ dtid }}')">▲▼</span>
+            <ul id="dt{{ dtid }}" style="display: none">
         {% endif %}
 
 
