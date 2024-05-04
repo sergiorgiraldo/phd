@@ -9,9 +9,9 @@ title: Categories
 {% for category in site.categories %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
     
-    <a href="#hide{{ category_name }}" class="hide" id="hide{{ category_name }}">+</a>
-    <a href="#show{{ category_name }}" class="show" id="show{{ category_name }}">-</a>  
-    <h3 class="category-head">{{ category_name }}</h3>
+    <b class="category-head">{{ category_name }}</b>&nbsp;
+    <span id="hide{{ category_name }}" style="cursor: pointer;">+</span>&nbsp;
+    <span id="show{{ category_name }}" style="cursor: pointer;">-</span>  
     <div class="archive-group" id="cat{{ category_name }}">
         {% for post in site.categories[category_name] %}
             <article class="archive-item">
