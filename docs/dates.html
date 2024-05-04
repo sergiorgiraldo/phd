@@ -20,7 +20,9 @@ title: Dates
         {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
         {% if month != nmonth %}
         {% if forloop.index != 1 %}</ul>{% endif %}
-            <h2>{{ post.date | date: '%B %Y' }}</h2><ul>
+            <b>{{ post.date | date: '%B %Y' }}</b>&nbsp;
+            <span style="cursor: pointer;" onclick="toggle('dt{{ post.date | date: \'%B %Y\' }}')">▲▼</span>
+            <ul id="dt{{ post.date | date: '%B%Y' }}" style="display: none">
         {% endif %}
 
 
@@ -37,3 +39,9 @@ title: Dates
         {% endif %}
     {% endfor %}
 </div>
+
+<script>
+    function toggle(id) {
+        document.getElementById(id).style.display = document.getElementById(id).style.display == 'none' ? 'block' : 'none';
+    }
+</script>

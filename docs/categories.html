@@ -10,7 +10,7 @@ title: Categories
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <div>
         <b class="category-head">{{ category_name }}</b>&nbsp;
-        <span id="hide{{ category_name }}" style="cursor: pointer;" onclick="toggle('cat{{ category_name }}')">▲▼</span>
+        <span style="cursor: pointer;" onclick="toggle('cat{{ category_name }}')">▲▼</span>
         <div class="archive-group" id="cat{{ category_name }}" style="display: none">
             {% for post in site.categories[category_name] %}
             <article class="archive-item">
