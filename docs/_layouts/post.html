@@ -30,11 +30,10 @@ layout: base
     {{ content }}
   </div>
 
-  {% assign categories = post.categories %}
   <ul>
-  {% for category in categories %}
-    <li>{{ category }}</li>
-  {% endfor %}
+    {% for category in page.categories %}
+        <li>{{ category }}</li>
+    {% endfor %}
   </ul>
   
   {%- if site.disqus.shortname -%}
