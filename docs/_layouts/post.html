@@ -29,12 +29,12 @@ layout: base
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+  
+  <hr >
 
-  <ul>
     {% for category in page.categories %}
-        <li>{{ category }}</li>
+    <i class="fa fa-folder"></i>{{ category }}&nbsp;
     {% endfor %}
-  </ul>
   
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
