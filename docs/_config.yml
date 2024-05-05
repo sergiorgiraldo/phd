@@ -20,8 +20,8 @@ paginate: 5
 
 # Build settings
 theme: minima #https://github.com/jekyll/minima/tree/master
-# plugins:
-#   - jekyll-feed
+plugins:
+  - jekyll-paginate
 
 minima:
   social_links:
