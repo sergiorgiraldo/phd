@@ -18,11 +18,12 @@ github_username:  sergiorgiraldo
 author: Sergio Giraldo
 
 # Build settings
-theme: minima
+theme: minima #https://github.com/jekyll/minima/tree/master
 # plugins:
 #   - jekyll-feed
 
-social_links:
+minima:
+  social_links:
    - { platform: github,         user_url: "https://github.com/sergiorgiraldo" }
    - { platform: twitter,        user_url: "https://twitter.com/sergiorgiraldo" }
    - { platform: linkedin,       user_url: "https://www.linkedin.com/in/sergiorgiraldo" }
