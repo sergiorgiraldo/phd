@@ -16,6 +16,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: sergiorgiraldo
 github_username:  sergiorgiraldo
 author: Sergio Giraldo
+paginate: 5
 
 # Build settings
 theme: minima #https://github.com/jekyll/minima/tree/master
