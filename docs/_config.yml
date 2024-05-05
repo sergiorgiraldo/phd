@@ -24,6 +24,6 @@ theme: minima #https://github.com/jekyll/minima/tree/master
 
 minima:
   social_links:
-   - { platform: github,         user_url: "https://github.com/sergiorgiraldo" }
-   - { platform: twitter,        user_url: "https://twitter.com/sergiorgiraldo" }
-   - { platform: linkedin,       user_url: "https://www.linkedin.com/in/sergiorgiraldo" }
+   - { platform: github, title: "/sergiorgiraldo", user_url: "https://github.com/sergiorgiraldo" }
+   - { platform: twitter, title: "/sergiorgiraldo", user_url: "https://twitter.com/sergiorgiraldo" }
+   - { platform: linkedin, title: "/sergiorgiraldo", user_url: "https://www.linkedin.com/in/sergiorgiraldo" }
