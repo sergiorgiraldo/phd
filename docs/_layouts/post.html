@@ -33,9 +33,9 @@ layout: base
   <hr >
 
     {% for category in page.categories %}
-        <i class="fa fa-folder"></i> {{ category }} &nbsp;
+        <i class="fa fa-folder"></i> <a href="phd/categories/{{category}}">{{ category }}</a> &nbsp;
     {% endfor %}
-  
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
