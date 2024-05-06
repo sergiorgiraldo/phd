@@ -1,15 +1,8 @@
 ---
-layout: base
+layout: page
 title: Categories
 ---
 
-<section class="small-intro">
-  <div class="container">
-    <h2>
-      All categories
-    </h2>
-  </div>
-</section>
 <section class="blog">
   <div id="categories">
     <div class="container">
@@ -17,11 +10,11 @@ title: Categories
       <div class="category">
         {% for inner in cat%} {% if forloop.first == true %}
         <span class="span-cat">
-          <a href="/phd/categories/{{cat[0]}}">{{cat[0]}}</a></span
+          <a href="/phd/category/{{cat[0]}}">{{cat[0]}}</a></span
         >
         -
         <span class="span-count">
-          <a href="/phd/categories/{{cat[0]}}"
+          <a href="/phd/category/{{cat[0]}}"
             >{{site.categories[inner].size}}</a
           ></span
         >
