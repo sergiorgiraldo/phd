@@ -1,31 +1,47 @@
 module Jekyll
-    class CategoryPageGenerator < Generator
+    class CategoryPageGenerator < Jekyll::Generator
       safe true
   
       def generate(site)
-        if site.layouts.key? 'category_index'
-          dir = site.config['category_dir'] || 'categories'
-          site.categories.each_key do |category|
-            site.pages << CategoryPage.new(site, site.source, File.join(dir, category), category)
-          end
+        site.categories.each do |category, posts|
+          site.pages << CategoryPage.new(site, category, posts)
         end
       end
     end
   
-    # A Page subclass used in the `CategoryPageGenerator`
-    class CategoryPage < Page
-      def initialize(site, base, dir, category)
-        @site = site
-        @base = base
-        @dir  = dir
-        @name = 'index.html'
+    # Subclass of `Jekyll::Page` with custom method definitions.
+    class CategoryPage < Jekyll::Page
+      def initialize(site, category, posts)
+        @site = site             # the current site instance.
+        @base = site.source      # path to the source directory.
+        @dir  = category         # the directory the page will reside in.
   
-        self.process(@name)
-        self.read_yaml(File.join(base, '_layouts'), 'category_index.html')
-        self.data['category'] = category
+        # All pages have the same filename, so define attributes straight away.
+        @basename = 'index'      # filename without the extension.
+        @ext      = '.html'      # the extension.
+        @name     = 'index.html' # basically @basename + @ext.
   
-        category_title_prefix = site.config['category_title_prefix'] || 'Category: '
-        self.data['title'] = "#{category_title_prefix}#{category}"
+        # Initialize data hash with a key pointing to all posts under current category.
+        # This allows accessing the list in a template via `page.linked_docs`.
+        @data = {
+          'linked_docs' => posts
+        }
+  
+        # Look up front matter defaults scoped to type `categories`, if given key
+        # doesn't exist in the `data` hash.
+        data.default_proc = proc do |_, key|
+          site.frontmatter_defaults.find(relative_path, :categories, key)
+        end
+      end
+  
+      # Placeholders that are used in constructing page URL.
+      def url_placeholders
+        {
+          :path       => @dir,
+          :category   => @dir,
+          :basename   => basename,
+          :output_ext => output_ext,
+        }
       end
     end
   end

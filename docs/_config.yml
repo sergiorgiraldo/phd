@@ -23,6 +23,13 @@ theme: minima #https://github.com/jekyll/minima/tree/master
 plugins:
   - jekyll-paginate
 
+defaults:
+  - scope:
+      type: categories  
+    values:
+      layout: category_index
+      permalink: categories/:category/
+
 minima:
   social_links:
    - { platform: github, title: "/sergiorgiraldo", user_url: "https://github.com/sergiorgiraldo" }
