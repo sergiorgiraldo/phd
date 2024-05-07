@@ -18,6 +18,7 @@ github_username:  sergiorgiraldo
 author: Sergio Giraldo
 permalink: /:year/:month/:day/:title:output_ext
 paginate: 8
+markdown: kramdown
 
 # Build settings
 theme: minima #https://github.com/jekyll/minima/tree/master
