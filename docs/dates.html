@@ -1,18 +1,20 @@
 ---
-layout: page
+layout: base
 permalink: /dates/
 title: Dates
 ---
-<div id="index">
+    <div class="px-4 py-2 desktop:px-0 post">
+        <h2 class="mb-6 mt-0 desktop:text-h4 text-h5 font-bold">Dates</h2>
+    </div>
     {% for post in site.posts %}
         {% unless post.next %}
-            <h2>{{ post.date | date: '%Y' }}</h2>
+        <h2 class="mb-6 mt-0 desktop:text-h4 text-h5 font-bold">{{ post.date | date: '%Y' }}</h2>
         {% else %}
             {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
             {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
             {% if year != nyear %}
             {% if forloop.index != 1 %}</ul>{% endif %}
-                <h2>{{ post.date | date: '%Y' }}</h2>
+            <h2 class="mb-6 mt-0 desktop:text-h4 text-h5 font-bold">{{ post.date | date: '%Y' }}</h2>
             {% endif %}
         {% endunless %}
 
@@ -23,24 +25,24 @@ title: Dates
         {% if forloop.index != 1 %}</ul>{% endif %}
             <b>{{ post.date | date: '%B %Y' }}</b>&nbsp;
             <span style="cursor: pointer;" onclick="toggle('dt{{ dtid }}')">▲▼</span>
-            <ul id="dt{{ dtid }}" style="display: none">
+            <ul class="mb-5 px-2 desktop:px-0" id="dt{{ dtid }}" 
+            {% if forloop.index != 1 %}style="display: none"{% endif %}
+            {% if forloop.index == 1 %}style="display: block"{% endif %}>
         {% endif %}
 
-
-        {% if post.link %}
-            <h3 class="link-post">
-                <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></h3>
-        {% else %}
-            <h3>
-                <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-            </h3>
-            <p><small>{{ post.date |  date: "%B %e, %Y" }}</small></p>
-            <!-- <p>{{ post.excerpt | strip_html | truncate: 160 }}</p> -->
-        {% endif %}
+        <li class="mb-10">
+            <div class="my-2">
+                <span class="text-graphite mx-4">{{ post.author }}</span>
+                <span class="text-graphite">{{ post.date | date: "%-d %b '%y" }}</span>
+            </div>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                <span class="text-grey/50 text-subtitle">./</span>
+                <span class="text-graphite text-h5 underline">{{ post.title | escape }}</span>
+                <span class="text-grey/50 text-subtitle">.md</span>
+            </a>
+        </li>        
     {% endfor %}
-</div>
-
+    </ul>
 <script>
     function toggle(id) {
         document.getElementById(id).style.display = document.getElementById(id).style.display == 'none' ? 'block' : 'none';

@@ -8,6 +8,7 @@ gem "webrick", "~> 1.8"
 gem "jekyll-sass-converter", "~> 2.0"
 gem "jekyll-paginate"
 gem "jekyll-category-pages", "~> 1.1.2"
+gem "jekyll-theme-superb"
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"

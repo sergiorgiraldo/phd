@@ -2,62 +2,28 @@
 layout: base
 ---
 
-<div class="home">
-    {%- if page.title -%}
-        <h1 class="page-heading">{{ page.title }}</h1>
-    {%- endif -%}
+{% if site.paginate %}
+    {% assign posts = paginator.posts %}
+{% else %}
+    {% assign posts = site.posts %}
+{% endif %}
 
-    {{ content }}
-
-    {% if site.paginate %}
-        {% assign posts = paginator.posts %}
-    {% else %}
-        {% assign posts = site.posts %}
-    {% endif %}
-
-
-    {%- if posts.size > 0 -%}
-        {%- if page.list_title -%}
-            <h2 class="post-list-heading">{{ page.list_title }}</h2>
-        {%- endif -%}
-        <ul class="post-list">
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            {%- for post in posts -%}
-            <li>
-                <span class="post-meta">{{ post.date | date: date_format }}</span>
-                <h3>
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                        {{ post.title | escape }}
-                    </a>
-                </h3>
-                {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
-                {%- endif -%}
-            </li>
-            {%- endfor -%}
-        </ul>
-
-        {% if site.paginate %}
-        <hr />
-        <div class="pager">
-            <ul class="pagination" style="list-style: none; padding-left: 0px; text-align: center;">
-                {%- if paginator.previous_page %}
-                    <li style="display: inline-block">
-                        <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{
-                        paginator.previous_page }}</a>
-                    </li>
-                {%- endif %}
-                <li style="display: inline-block">
-                    <div class="current-page">{{ paginator.page }}</div>
-                </li>
-                {%- if paginator.next_page %}
-                    <li style="display: inline-block">
-                        <a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a>
-                    </li>
-                {%- endif %}
-            </ul>
-        </div>
-        {%- endif %}
-    {%- endif -%}
-
-</div>
+{%- if posts.size > 0 -%}
+    <ul class="mb-5 px-2 desktop:px-0">
+        {%- for post in posts -%}
+        <li class="mb-10">
+            <div class="my-2">
+                <span class="text-graphite mx-4">{{ post.author }}</span>
+                <span class="text-graphite">{{ post.date | date: "%-d %b '%y" }}</span>
+            </div>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                <span class="text-grey/50 text-subtitle">./</span>
+                <span class="text-graphite text-h5 underline">{{ post.title | escape }}</span>
+                <span class="text-grey/50 text-subtitle">.md</span>
+            </a>
+        </li>
+        {%- endfor -%}
+    </ul>
+{%- else -%}
+    <h3 class="text-grey text-h5 desktop:text-h3 py-10 desktop:px-0 px-4">No posts available.</h3>
+{% endif %}

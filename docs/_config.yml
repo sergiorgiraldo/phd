@@ -7,7 +7,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: PHD SRG
+title: PHD SRG.
 # email: sergiorgiraldo@gmail.com
 # description: >- # this means to ignore newlines until "baseurl:"
 #   PHD journey for Sergio Giraldo.
@@ -21,7 +21,8 @@ paginate: 8
 markdown: kramdown
 
 # Build settings
-theme: minima #https://github.com/jekyll/minima/tree/master
+#theme: minima #https://github.com/jekyll/minima/tree/master
+theme: jekyll-theme-superb
 plugins:
   - jekyll-paginate
   - jekyll-category-pages

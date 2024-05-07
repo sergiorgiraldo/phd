@@ -1,13 +1,10 @@
-<footer class="site-footer h-card">
-    <data class="u-url" href="{{ " /" | relative_url }}"></data>
-    <div class="wrapper">
-        <div class="footer-col-wrapper">
-            <div class="footer-col">
-                {%- include social.html -%}
-            </div>
-            <div class="footer-col">
-                &copy; {{ site.author }} {{ 'now' | date: "%Y" }}
-            </div>
-        </div>
+<div class="border-t border-porcelain py-4 text-caption">
+    <div class="text-center desktop:flex desktop:justify-between space-y-2">
+        <p>
+            {%- include social.html -%}
+        </p>
+        <p>
+            {{ site.time | date: '%Y' }}  &copy; {{ site.author }}. All rights reserved.
+        </p>
     </div>
-</footer>
+</div>

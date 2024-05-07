@@ -4,24 +4,12 @@ permalink: /categories/
 title: Categories
 ---
 
-<section class="blog">
-  <div id="categories">
-    <div class="container">
-      {% for cat in site.categories %}
-      <div class="category">
+    {% for cat in site.categories %}
         {% for inner in cat%} {% if forloop.first == true %}
-        <span class="span-cat">
-          <a href="/phd/category/{{cat[0]}}">{{cat[0]}}</a></span
-        >
-        -
-        <span class="span-count">
-          <a href="/phd/category/{{cat[0]}}"
-            >{{site.categories[inner].size}}</a
-          ></span
-        >
+            <a class="text-graphite border-b-2 border-white hover:border-graphite hover:border-b-2 transition duration-300"
+                href="/phd/category/{{cat[0]}}">{{cat[0]}}</a>
+        
+            ({{site.categories[inner].size}})
+        <br />        
         {% endif %} {% endfor %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+    {% endfor %}

@@ -1,44 +1,18 @@
 ---
 layout: base
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-        ~ 
-        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-      {%- endif -%}
-      {%- if page.author -%}
-        • {% for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
-        {% endfor %}
-      {%- endif -%}</p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
-  </div>
-  
-  <hr >
+<div class="px-4 py-2 desktop:px-0 post">
+    <div>
+        <span class="text-graphite mx-4">{{ page.author }}</span>
+        <span class="text-graphite">{{ page.date | date: "%-d %b '%y" }}</span>
+    </div>
+    <h2 class="mb-6 mt-0 desktop:text-h4 text-h5 font-bold">{{page.title}}</h2>
+    <div class="font-sans post">{{ content }}</div>
+    
+    <hr>
 
     {% for category in page.categories %}
         <i class="fa fa-folder"></i> <a href="/phd/category/{{category}}">{{ category }}</a> &nbsp;
     {% endfor %}
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+</div>
