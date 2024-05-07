@@ -5,7 +5,8 @@ layout: base
 
   <!-- Pagination is active -->
   {% assign paginator = page.paginator %}
-
+  <div class="px-4 py-2 desktop:px-0 post">
+  
   {% if paginator.previous_page != nil or paginator.next_page != nil %}
     <!-- Show page number if we have multiple pages -->
     <h2 class="mb-6 mt-0 desktop:text-h4 text-h5 font-bold">Index page {{ paginator.page }} / {{ paginator.total_pages }} for &ldquo;{{ page.title }}&rdquo;</h2>
@@ -13,6 +14,7 @@ layout: base
     <!-- No page number if we only have a single page -->
     <h2 class="mb-6 mt-0 desktop:text-h4 text-h5 font-bold">Index for &ldquo;{{ page.title }}&rdquo;</h2>
   {% endif %}
+  </div>
 
   <ul class="mb-5 px-2 desktop:px-0">
     <!-- Show post excerpts for the current page -->
