@@ -16,5 +16,5 @@ jobs:
           # to the issue
           project-url: https://github.com/users/sergiorgiraldo/projects/3
           github-token: ${{ secrets.GH_PAT_PHD }}
-          labeled: search, analyze, refine, write, teacher
+          labeled: search, analyze, refine, write, teacher, decide
           label-operator: OR
