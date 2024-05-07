@@ -17,7 +17,7 @@ twitter_username: sergiorgiraldo
 github_username:  sergiorgiraldo
 author: Sergio Giraldo
 permalink: /:year/:month/:day/:title:output_ext
-paginate: 8
+paginate: 5
 markdown: kramdown
 
 # Build settings
