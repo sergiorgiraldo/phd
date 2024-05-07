@@ -24,6 +24,27 @@ layout: base
         </li>
         {%- endfor -%}
     </ul>
+    {% if site.paginate %}
+    <hr />
+    <div class="pager">
+        <ul class="pagination" style="list-style: none; padding-left: 0px; text-align: center;">
+            {%- if paginator.previous_page %}
+                <li style="display: inline-block">
+                    <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{
+                    paginator.previous_page }}</a>
+                </li>
+            {%- endif %}
+            <li style="display: inline-block">
+                <div class="current-page">{{ paginator.page }}</div>
+            </li>
+            {%- if paginator.next_page %}
+                <li style="display: inline-block">
+                    <a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a>
+                </li>
+            {%- endif %}
+        </ul>
+    </div>
+    {%- endif %}
 {%- else -%}
     <h3 class="text-grey text-h5 desktop:text-h3 py-10 desktop:px-0 px-4">No posts available.</h3>
 {% endif %}
