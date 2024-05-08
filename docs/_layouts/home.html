@@ -27,25 +27,22 @@ layout: base
     {% if site.paginate %}
     <hr />
         <nav>
-            <ul class="inline-flex -space-x-px text-sm">
-                {%- if paginator.previous_page %}
-                    <li class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <a href="{{ paginator.previous_page_path | relative_url }}">
-                            {{paginator.previous_page }}
-                        </a>
+                <ul class="pagination" style="list-style: none; padding-left: 0px; text-align: center;">
+                    {%- if paginator.previous_page %}
+                        <li style="display: inline-block;padding-right: 1em;">
+                            <a href="{{ paginator.previous_page_path | relative_url }}" class="text-graphite">{{
+                            paginator.previous_page }}</a>
+                        </li>
+                    {%- endif %}
+                    <li style="display: inline-block;padding-right: 1em;">
+                        <div class="text-green">{{ paginator.page }}</div>
                     </li>
-                {%- endif %}
-                    <li class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-                    {{ paginator.page }}
-                    </li>
-                {%- if paginator.next_page %}
-                    <li class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <a href="{{ paginator.next_page_path | relative_url }}">
-                            {{ paginator.next_page }}
-                        </a>
-                    </li>
-                {%- endif %}
-            </ul>
+                    {%- if paginator.next_page %}
+                        <li style="display: inline-block;padding-right: 1em;">
+                            <a href="{{ paginator.next_page_path | relative_url }}" class="text-graphite">{{ paginator.next_page }}</a>
+                        </li>
+                    {%- endif %}
+                </ul>
         </nav>
         <br />
     {%- endif %}
