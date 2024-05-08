@@ -26,24 +26,25 @@ layout: base
     </ul>
     {% if site.paginate %}
     <hr />
-    <div class="pager">
-        <ul class="pagination" style="list-style: none; padding-left: 0px; text-align: center;">
+        <ul class="inline-flex -space-x-px text-sm">
             {%- if paginator.previous_page %}
-                <li style="display: inline-block;padding-right: 1em;">
-                    <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{
-                    paginator.previous_page }}</a>
+                <li class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <a href="{{ paginator.previous_page_path | relative_url }}">
+                        {{paginator.previous_page }}
+                    </a>
                 </li>
             {%- endif %}
-            <li style="display: inline-block;padding-right: 1em;">
-                <div class="current-page">{{ paginator.page }}</div>
-            </li>
+                <li class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+                {{ paginator.page }}
+                </li>
             {%- if paginator.next_page %}
-                <li style="display: inline-block;padding-right: 1em;">
-                    <a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a>
+                <li class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <a href="{{ paginator.next_page_path | relative_url }}">
+                        {{ paginator.next_page }}
+                    </a>
                 </li>
             {%- endif %}
         </ul>
-    </div>
     <br /><br />
     {%- endif %}
 {%- else -%}
