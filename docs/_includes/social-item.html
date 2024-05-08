@@ -1,5 +1,5 @@
 {% assign entry = include.item %}
-<a rel="me" href="{{ entry.user_url }}" target="_blank" class="inline-block text-green font-bold">
+<a rel="me" href="{{ entry.user_url }}" target="_blank" class="inline-block padding-top-1 font-bold">
     <i class="fa fa-{{entry.platform}}"></i>
     {{ entry.title | default: entry.platform }}
 </a>
