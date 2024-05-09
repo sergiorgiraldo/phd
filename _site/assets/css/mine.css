@@ -21,3 +21,13 @@ th{
 .text-top {
     vertical-align: top;
 }
+
+.mobile-hidden{
+    display: block;
+}
+
+@media (max-width : 320px) {
+    .mobile-hidden{
+        display: none;
+    }
+}
