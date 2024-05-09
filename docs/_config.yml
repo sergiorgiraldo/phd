@@ -12,6 +12,7 @@ subtitle: Research
 email: sergiorgiraldo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   My journey.
+  
   May 2024 -> ...
 baseurl: "/phd" 
 url: "https://sergiorgiraldo.github.io" 
