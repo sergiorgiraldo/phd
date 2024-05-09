@@ -4,7 +4,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 def main(args):
-    if len(args) < 2:
+    if len(args) < 3:
         print('usage: newpost <name> <title> <categories>')
         print('title should be quoted')
         print('categories should be quoted and separated by commas')
