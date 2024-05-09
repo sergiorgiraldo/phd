@@ -22,11 +22,8 @@ th{
     vertical-align: top;
 }
 
-.mobile-hidden{
-    display: block;
-}
-
-@media (max-width : 320px) {
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
     .mobile-hidden{
         display: none;
     }
