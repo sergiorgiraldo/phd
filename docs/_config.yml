@@ -9,11 +9,11 @@
 
 title: PHD SRG.
 subtitle: Research
-# email: sergiorgiraldo@gmail.com
+email: sergiorgiraldo@gmail.com
 # description: >- # this means to ignore newlines until "baseurl:"
 #   PHD journey for Sergio Giraldo.
-baseurl: "/phd" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/phd" 
+url: "https://sergiorgiraldo.github.io/phd/" 
 twitter_username: sergiorgiraldo
 github_username:  sergiorgiraldo
 author: Sergio Giraldo
@@ -21,15 +21,8 @@ permalink: /:year/:month/:day/:title:output_ext
 paginate: 5
 markdown: kramdown
 
-# Build settings
-#theme: minima #https://github.com/jekyll/minima/tree/master
 theme: jekyll-theme-superb
 plugins:
   - jekyll-paginate
   - jekyll-category-pages
-
-minima:
-  social_links:
-   - { platform: github, title: "/sergiorgiraldo", user_url: "https://github.com/sergiorgiraldo" }
-   - { platform: twitter, title: "/sergiorgiraldo", user_url: "https://twitter.com/sergiorgiraldo" }
-   - { platform: linkedin, title: "/sergiorgiraldo", user_url: "https://www.linkedin.com/in/sergiorgiraldo" }
+  - jekyll-sitemap
