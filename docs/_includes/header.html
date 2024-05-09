@@ -8,13 +8,13 @@
                     <span class="text-green">{{ site.title | escape | slice: -4, 3 }}</span>
                     <span class="text-graphite">{{ site.title | escape | slice: -1, 1 }}</span>
                     {% if site.subtitle %}
-                    <span class="text-grey/50 hidden desktop:inline text-h5 ml-4">
+                    <span class="text-grey/50 desktop:inline text-h5 ml-4">
                         {{ site.subtitle }}
                     </span>
                     {% endif %}
                 </a>
             </div>
-            <div class="hidden desktop:flex items-center space-x-5">
+            <div class="desktop:flex items-center space-x-5">
                 <a href="{{ '/' | relative_url }}" 
                     class="text-graphite border-b-2 border-white hover:border-graphite hover:border-b-2 transition duration-300"
                     >Home</a>
