@@ -9,7 +9,13 @@ layout: base
     </div>
     <h5 class="mb-6 mt-0 desktop:text-h4 text-h5 font-bold">{{page.title}}</h5>
 
-    <table class="border-collapse border border-slate-400" style="width: 100%;">
+    <div class="desktop-hidden">
+        <a href="https://doi.org/{{ page.doi }}" target="_blank">
+            {{page.doi }}
+        </a>
+    </div>
+        
+    <table class="border-collapse border border-slate-400 mobile-hidden" style="width: 100%;">
         <thead>
             <tr>
                 <th class="border border-slate-300" style="width: 30%;">
