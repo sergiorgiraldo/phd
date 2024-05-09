@@ -1,0 +1,11 @@
+#!/bin/sh
+
+url=https://doi.org/$1
+
+curl -LH "Accept: text/x-bibliography; style=apa" $url | pbcopy 
+
+echo ""
+echo "Copied citation to clipboard"
+echo ""
+
+pbpaste

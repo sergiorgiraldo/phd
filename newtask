@@ -1,0 +1,23 @@
+#!/bin/sh
+
+PROGNAME="$(basename "${0}")"
+
+_usage() {
+    printf "%s\\n" "Usage: ${PROGNAME} Title Body"
+    printf "%s\\n" "Example: ${PROGNAME} 'This is the title' 'This is the body'"
+    exit 1	
+}
+
+_die() {
+	_usage >&2; exit 1
+}
+
+if [ "$#" -ne 1 ] && [ "$#" -ne 2 ]; then
+	_die
+fi
+
+if [ "$#" -eq 1 ]; then
+    gh project item-create 3  --title "$1" --body "$1" --owner sergiorgiraldo
+else
+    gh project item-create 3  --title "$1" --body "$2" --owner sergiorgiraldo
+fi
