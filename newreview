@@ -5,6 +5,7 @@ from datetime import datetime, timedelta, timezone
 import requests
 import re
 
+
 def main(args):
     if len(args) < 3:
         print('usage: newreview <title> <doi> <categories>')
@@ -19,22 +20,21 @@ def main(args):
     cite = ''
 
     now_ = datetime.now(timezone.utc)
-    tz_offset = timezone(timedelta(hours=3)) # NL
+    tz_offset = timezone(timedelta(hours=3))  # NL
     now = now_.astimezone(tz_offset)
     if now.dst() != timedelta(0):
-        tz_offset = timezone(timedelta(hours=2)) # NL WITH DST
+        tz_offset = timezone(timedelta(hours=2))  # NL WITH DST
         now = now_.astimezone(tz_offset)
 
     short_dt = now.strftime("%Y-%m-%d")
-    full_dt = now.strftime("%Y-%m-%d %H:%M:%S %z")        
+    full_dt = now.strftime("%Y-%m-%d %H:%M:%S %z")
 
     url = f"https://doi.org/{doi}"
 
     headers = {"Accept": "text/x-bibliography; style=apa"}
     response = requests.get(url, headers=headers, allow_redirects=True)
 
-    if response.status_code == 200:
-        cite = response.text
+    cite = response.text if response.status_code == 200 else 'error retrieving cite'
 
     with open('docs/_posts/' + short_dt + '-' + name + '.md', 'w') as f:
         f.write('---\n')
@@ -46,13 +46,12 @@ def main(args):
         f.write('categories: [' + cats + ']\n')
         f.write('---\n\n')
 
-def get_name(text):
-    cleaned_text = re.sub(r'\s+', '-', text)
 
-    if len(cleaned_text) > 50:
-        return cleaned_text[:50]
-    else:
-        return cleaned_text
+def get_name(title):
+    cleaned_title = re.sub(r'\s+', '-', title)
+
+    return cleaned_title[:50] if len(cleaned_title) > 50 else cleaned_title
+
 
 if __name__ == '__main__':
     main(sys.argv[1:])

@@ -3,6 +3,7 @@
 import sys
 from datetime import datetime, timedelta, timezone
 
+
 def main(args):
     if len(args) < 3:
         print('usage: newpost <name> <title> <categories>')
@@ -10,19 +11,19 @@ def main(args):
         print('categories should be quoted and separated by commas')
         sys.exit(2)
 
-    name = args[0]    
+    name = args[0]
     title = args[1]
     cats = args[2]
 
     now_ = datetime.now(timezone.utc)
-    tz_offset = timezone(timedelta(hours=3)) # NL
+    tz_offset = timezone(timedelta(hours=3))  # NL
     now = now_.astimezone(tz_offset)
     if now.dst() != timedelta(0):
-        tz_offset = timezone(timedelta(hours=2)) # NL WITH DST
+        tz_offset = timezone(timedelta(hours=2))  # NL WITH DST
         now = now_.astimezone(tz_offset)
 
     short_dt = now.strftime("%Y-%m-%d")
-    full_dt = now.strftime("%Y-%m-%d %H:%M:%S %z")        
+    full_dt = now.strftime("%Y-%m-%d %H:%M:%S %z")
 
     with open('docs/_posts/' + short_dt + '-' + name + '.md', 'w') as f:
         f.write('---\n')
@@ -31,6 +32,7 @@ def main(args):
         f.write('date: ' + full_dt + '\n')
         f.write('categories: [' + cats + ']\n')
         f.write('---\n\n')
+
 
 if __name__ == '__main__':
     main(sys.argv[1:])

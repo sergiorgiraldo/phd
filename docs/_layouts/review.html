@@ -11,23 +11,36 @@ layout: base
 
     <table class="border-collapse border border-slate-400" style="width: 100%;">
         <thead>
-          <tr>
-            <th class="border border-slate-300" style="width: 30%;">DOI</th>
-            <th class="border border-slate-300" style="width: 70%;">Cite</th>
-          </tr>
+            <tr>
+                <th class="border border-slate-300" style="width: 30%;">
+                    DOI
+                </th>
+                <th class="border border-slate-300" style="width: 70%;">
+                    Cite
+                </th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="border border-slate-300 text-top"><a href="https://doi.org/{{ page.doi }}" target="_blank">{{ page.doi }}</a></td>
-            <td class="border border-slate-300 text-top">{{ page.cite}}</td>
-          </tr>
+            <tr>
+                <td class="border border-slate-300 text-top">
+                    <a href="https://doi.org/{{ page.doi }}" target="_blank">
+                        {{page.doi }}
+                    </a>
+                </td>
+                <td class="border border-slate-300 text-top">
+                    {{ page.cite}}
+                </td>
+            </tr>
         </tbody>
-    </table>  
+    </table>
     <div class="font-sans post">{{ content }}</div>
-    
+
     <hr>
 
     {% for category in page.categories %}
-        <i class="fa fa-folder"></i> <a href="/phd/category/{{category}}">{{ category }}</a> &nbsp;
+        <i class="fa fa-folder"></i>
+        &nbsp;
+        <a href="/phd/category/{{category}}">{{ category }}</a> 
+        &nbsp;
     {% endfor %}
 </div>
