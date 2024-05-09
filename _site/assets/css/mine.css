@@ -22,16 +22,16 @@ th{
     vertical-align: top;
 }
 
-.desktop-hidden{
-    display: none;
-}
-
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .mobile-hidden{
         display: none;
     }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
     .desktop-hidden{
-        display: block;
+        display: none;
     }
 }
