@@ -35,3 +35,7 @@ th{
         display: none;
     }
 }
+
+.text-orange{
+    color: rgb(194 65 12);
+}
