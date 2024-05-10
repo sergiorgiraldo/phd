@@ -37,15 +37,21 @@ th{
 }
 
 a.social{
-    color: rgb(194 65 12);
+    color: rgb(21 128 61);
     text-decoration: none;
 }
 
 a.social:hover{
     text-decoration: underline;
-    color: rgb(194 65 12);
+    color: rgb(21 128 61);
 }
 
 a.social:visited{
-    color: rgb(194 65 12);
+    color: rgb(21 128 61);
+}
+
+.hover\:border-b-1:hover{ border-bottom-width: 1px;
+}
+
+.hover\:border-lightgreen:hover{ --tw-border-opacity: 1; border-color: rgb(187 247 208 / var(--tw-border-opacity));
 }
