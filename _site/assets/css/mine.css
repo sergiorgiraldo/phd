@@ -36,6 +36,16 @@ th{
     }
 }
 
-a.text-orange{
+a.social{
+    color: rgb(194 65 12);
+    text-decoration: none;
+}
+
+a.social:hover{
+    text-decoration: underline;
+    color: rgb(194 65 12);
+}
+
+a.social:visited{
     color: rgb(194 65 12);
 }
