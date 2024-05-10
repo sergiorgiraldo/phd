@@ -4,7 +4,7 @@ permalink: /categories/
 title: Categories
 ---
 
-    {% for cat in site.categories %}
+    {% for cat in site.categories | sort %}
         {% for inner in cat%} {% if forloop.first == true %}
             <a class="text-graphite hover:border-graphite hover:border-b-2 transition duration-300"
                 href="/phd/category/{{cat[0]}}">{{cat[0]}}</a>
