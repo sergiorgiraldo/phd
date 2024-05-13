@@ -53,12 +53,9 @@ gh api graphql -f query='
 """
 result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-# Check if the command executed successfully
 if result.returncode == 0:
-    # Decode the output from bytes to string
     output = result.stdout.decode("utf-8")
     
-    # Parse the output as JSON
     json_data = json.loads(output)
     
     statuses = set()
@@ -66,16 +63,13 @@ if result.returncode == 0:
     
     items = (json_data["data"]["node"]["items"]["nodes"])
     for item in items:
+        title_ = item["content"]["title"]
         status = item["fieldValues"]["nodes"][-1]["name"]
-        statuses.add(status)
 
-        # Increment the count for the current status
+        statuses.add(status)
+        
         status_counts[status] = status_counts.get(status, 0) + 1
 
-        # print(item["fieldValues"]["nodes"][-1]["name"])
-        # print("-")
-        # print((item["content"]["title"]))
-        # print("\n--------\n")
     
     badges = []
 

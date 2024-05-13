@@ -1,0 +1,15 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+
+<pre>
+    {{ site.description }}
+</pre>
+
+<h2>Project</h2>
+
+<a href="https://github.com/users/sergiorgiraldo/projects/3" target="_blank">Follow</a>
+
+badges
