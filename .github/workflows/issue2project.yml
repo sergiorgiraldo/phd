@@ -12,8 +12,6 @@ jobs:
     steps:
       - uses: actions/add-to-project@v1.0.1
         with:
-          # You can target a project in a different organization
-          # to the issue
           project-url: https://github.com/users/sergiorgiraldo/projects/3
           github-token: ${{ secrets.GH_PAT_PHD }}
           labeled: search, analyze, refine, write, teacher, decide, review

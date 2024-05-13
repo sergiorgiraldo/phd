@@ -6,9 +6,9 @@ from datetime import datetime, timedelta, timezone
 
 def main(args):
     if len(args) < 3:
-        print('usage: newpost <name> <title> <categories>')
-        print('title should be quoted')
-        print('categories should be quoted and separated by commas')
+        print("usage: newpost <name> <title> <categories>")
+        print("title should be quoted")
+        print("categories should be quoted and separated by commas")
         sys.exit(2)
 
     name = args[0]
@@ -25,14 +25,14 @@ def main(args):
     short_dt = now.strftime("%Y-%m-%d")
     full_dt = now.strftime("%Y-%m-%d %H:%M:%S %z")
 
-    with open('docs/_posts/' + short_dt + '-' + name + '.md', 'w') as f:
-        f.write('---\n')
-        f.write('layout: post\n')
-        f.write('title: "' + title + '"\n')
-        f.write('date: ' + full_dt + '\n')
-        f.write('categories: [' + cats + ']\n')
-        f.write('---\n\n')
+    with open("docs/_posts/" + short_dt + "-" + name + ".md", "w") as f:
+        f.write("---\n")
+        f.write("layout: post\n")
+        f.write("title: "" + title + ""\n")
+        f.write("date: " + full_dt + "\n")
+        f.write("categories: [" + cats + "]\n")
+        f.write("---\n\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main(sys.argv[1:])

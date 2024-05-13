@@ -3,7 +3,6 @@
 import subprocess
 import json
 
-# Execute the command-line command
 command = """
 gh api graphql -f query='
   query{
@@ -11,22 +10,8 @@ gh api graphql -f query='
         ... on ProjectV2 {
           items(first: 20) {
             nodes{
-              fieldValues(last: 5) {
+              fieldValues(last: 1) {
                 nodes{                
-                  ... on ProjectV2ItemFieldTextValue {
-                    field {
-                      ... on ProjectV2FieldCommon {
-                        name
-                      }
-                    }
-                  }
-                  ... on ProjectV2ItemFieldDateValue {
-                    field {
-                      ... on ProjectV2FieldCommon {
-                        name
-                      }
-                    }
-                  }
                   ... on ProjectV2ItemFieldSingleSelectValue {
                     name
                     field {
@@ -84,6 +69,5 @@ if result.returncode == 0:
     print("\n\n".join(badges))
 
 else:
-    # Handle command execution error
-    error_message = result.stderr.decode('utf-8')
+    error_message = result.stderr.decode("utf-8")
     print(f"Error: {error_message}")

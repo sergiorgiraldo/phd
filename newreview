@@ -5,19 +5,18 @@ from datetime import datetime, timedelta, timezone
 import requests
 import re
 
-
 def main(args):
     if len(args) < 3:
-        print('usage: newreview <title> <doi> <categories>')
-        print('title should be quoted')
-        print('categories should be quoted and separated by commas')
+        print("usage: newreview <title> <doi> <categories>")
+        print("title should be quoted")
+        print("categories should be quoted and separated by commas")
         sys.exit(2)
 
     title = args[0]
     name = get_name(title)
     doi = args[1]
     cats = args[2]
-    cite = ''
+    cite = ""
 
     now_ = datetime.now(timezone.utc)
     tz_offset = timezone(timedelta(hours=3))  # NL
@@ -34,24 +33,24 @@ def main(args):
     headers = {"Accept": "text/x-bibliography; style=apa"}
     response = requests.get(url, headers=headers, allow_redirects=True)
 
-    cite = response.text if response.status_code == 200 else 'error retrieving cite'
+    cite = response.text if response.status_code == 200 else "error retrieving cite"
 
-    with open('docs/_posts/' + short_dt + '-' + name + '.md', 'w') as f:
-        f.write('---\n')
-        f.write('layout: review\n')
-        f.write('title: "' + title + '"\n')
-        f.write('doi: "' + doi + '"\n')
-        f.write('cite: "' + cite + '"\n')
-        f.write('date: ' + full_dt + '\n')
-        f.write('categories: [' + cats + ']\n')
-        f.write('---\n\n')
+    with open("docs/_posts/" + short_dt + "-" + name + ".md", "w") as f:
+        f.write("---\n")
+        f.write("layout: review\n")
+        f.write("title: "" + title + ""\n")
+        f.write("doi: "" + doi + ""\n")
+        f.write("cite: "" + cite + ""\n")
+        f.write("date: " + full_dt + "\n")
+        f.write("categories: [" + cats + "]\n")
+        f.write("---\n\n")
 
 
 def get_name(title):
-    cleaned_title = re.sub(r'\s+', '-', title)
+    cleaned_title = re.sub(r"\s+", "-", title)
 
     return cleaned_title[:50] if len(cleaned_title) > 50 else cleaned_title
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main(sys.argv[1:])
