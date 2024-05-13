@@ -4,13 +4,12 @@ title: About
 permalink: /about/
 ---
 
-<pre>
-    {{ site.description }}
-</pre>
 
-<h2>Project</h2>
+`{{ site.description }}`
 
-<a href="https://github.com/users/sergiorgiraldo/projects/3" target="_blank">Follow</a>
+## Project
+
+[https://github.com/users/sergiorgiraldo/projects/3](Follow)
 
 ![Static Badge](https://img.shields.io/badge/Prioritized-1-blue?style=for-the-badge)
 
