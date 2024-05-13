@@ -12,4 +12,4 @@ https://sergiorgiraldo.github.io/phd/
 
 https://github.com/users/sergiorgiraldo/projects/3 
 
-Status
+status
