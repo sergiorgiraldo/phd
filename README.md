@@ -16,4 +16,8 @@ https://github.com/users/sergiorgiraldo/projects/3
 
 *status*
 
+![Static Badge](https://img.shields.io/badge/Prioritized-1-blue)
 
+![Static Badge](https://img.shields.io/badge/Doing-1-green)
+
+![Static Badge](https://img.shields.io/badge/Backlog-2-red)

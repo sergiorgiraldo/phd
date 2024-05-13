@@ -93,5 +93,3 @@ else:
     # Handle command execution error
     error_message = result.stderr.decode('utf-8')
     print(f"Error: {error_message}")
-
-    ![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-red)
