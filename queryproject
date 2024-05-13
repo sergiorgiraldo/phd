@@ -77,9 +77,19 @@ if result.returncode == 0:
         # print((item["content"]["title"]))
         # print("\n--------\n")
     
+    badges = []
+
+    badges.append("status")
+
     for status in statuses: 
-        if status != "Done":
-            print(status, status_counts[status])
+        if status == "Backlog":
+            badges.append(f"https://img.shields.io/badge/{status}-{status_counts[status]}-red")
+        if status == "Prioritized":
+            badges.append(f"https://img.shields.io/badge/{status}-{status_counts[status]}-blue")
+        if status == "Doing":
+            badges.append(f"https://img.shields.io/badge/{status}-{status_counts[status]}-green")
+
+    print("\n\n".join(badges))
 
 else:
     # Handle command execution error
