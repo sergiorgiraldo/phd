@@ -81,11 +81,11 @@ if result.returncode == 0:
 
     for status in statuses: 
         if status == "Backlog":
-            badges.append(f"https://img.shields.io/badge/{status}-{status_counts[status]}-red")
+            badges.append(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-red)")
         if status == "Prioritized":
-            badges.append(f"https://img.shields.io/badge/{status}-{status_counts[status]}-blue")
+            badges.append(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-blue)")
         if status == "Doing":
-            badges.append(f"https://img.shields.io/badge/{status}-{status_counts[status]}-green")
+            badges.append(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-green)")
 
     print("\n\n".join(badges))
 
@@ -93,3 +93,5 @@ else:
     # Handle command execution error
     error_message = result.stderr.decode('utf-8')
     print(f"Error: {error_message}")
+
+    ![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-red)
