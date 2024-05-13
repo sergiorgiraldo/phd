@@ -55,10 +55,12 @@ if result.returncode == 0:
         
         status_counts[status] = status_counts.get(status, 0) + 1
 
-    
+    ordered_statuses = list(statuses)
+    ordered_statuses.sort()
+
     badges = []
 
-    for status in statuses: 
+    for status in ordered_statuses: 
         if status == "Backlog":
             badges.append(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-red?style=for-the-badge)")
         if status == "Prioritized":
