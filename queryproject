@@ -79,8 +79,6 @@ if result.returncode == 0:
     
     badges = []
 
-    badges.append("status")
-
     for status in statuses: 
         if status == "Backlog":
             badges.append(f"https://img.shields.io/badge/{status}-{status_counts[status]}-red")
