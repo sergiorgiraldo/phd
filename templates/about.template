@@ -6,6 +6,8 @@ permalink: /about/
 
 <pre>{{ site.description }}</pre>
 
+<br />
+
 ### Project
 
 [Follow](https://github.com/users/sergiorgiraldo/projects/3)
