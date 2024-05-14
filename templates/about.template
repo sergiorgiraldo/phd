@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-`{{ site.description }}`
+<pre>{{ site.description }}</pre>
 
 ### Project
 
