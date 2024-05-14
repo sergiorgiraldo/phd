@@ -58,15 +58,17 @@ if result.returncode == 0:
     ordered_statuses = list(statuses)
     ordered_statuses.sort()
 
-    badges = []
+    badges = ["", "", "", ""]
 
     for status in ordered_statuses: 
         if status == "Backlog":
-            badges.append(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-red?style=for-the-badge)")
+            badges[0] = (f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-red?style=for-the-badge)")
         if status == "Prioritized":
-            badges.append(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-blue?style=for-the-badge)")
+            badges[1] =(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-blue?style=for-the-badge)")
         if status == "Doing":
-            badges.append(f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-green?style=for-the-badge)")
+            badges[2] = (f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-green?style=for-the-badge)")
+        if status == "Done":
+            badges[3] = (f"![Static Badge](https://img.shields.io/badge/{status}-{status_counts[status]}-cyan?style=for-the-badge)")
 
     print("\n\n".join(badges))
 
