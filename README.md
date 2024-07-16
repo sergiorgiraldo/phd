@@ -32,4 +32,4 @@ https://github.com/users/sergiorgiraldo/projects/3
 
 - Badges in readme and about pages are generated automatically running shell script `queryproject` in the pre-commit hook. 
 
-The pre-commit hook also bundles the Jekyll site into the `_site` folder. This is then picked by the github workflow and publishes in my GH pages.
+- The pre-commit hook also bundles the Jekyll site into the `_site` folder. This is then picked by the github workflow and published in my GH pages.
