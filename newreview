@@ -38,9 +38,9 @@ def main(args):
     with open("docs/_posts/" + short_dt + "-" + name + ".md", "w") as f:
         f.write("---\n")
         f.write("layout: review\n")
-        f.write("title: "" + title + ""\n")
-        f.write("doi: "" + doi + ""\n")
-        f.write("cite: "" + cite + ""\n")
+        f.write("title: " + title + "\n")
+        f.write("doi: " + doi + "\n")
+        f.write("cite: " + cite + "\n")
         f.write("date: " + full_dt + "\n")
         f.write("categories: [" + cats + "]\n")
         f.write("---\n\n")
