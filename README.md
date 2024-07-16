@@ -6,7 +6,7 @@ My journey
 
 https://sergiorgiraldo.github.io/phd/
 
-*status*
+### Status
 
 [![Deployment](https://github.com/sergiorgiraldo/phd/actions/workflows/jekyll.yml/badge.svg)](https://github.com/sergiorgiraldo/phd/actions/workflows/jekyll.yml)
 
@@ -14,7 +14,7 @@ https://sergiorgiraldo.github.io/phd/
 
 https://github.com/users/sergiorgiraldo/projects/3 
 
-*status*
+### Status
 
 ![Static Badge](https://img.shields.io/badge/Backlog-2-red?style=for-the-badge)
 
